@@ -13,6 +13,11 @@
     <div class="cnt">
         <nav>
             <h2><span>H</span>arsh.</h2>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul>
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#project">Project</a></li>
@@ -77,6 +82,12 @@
             <!-- --------------Section-3-------------------- -->
         </div>
     </div>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        }
+    </script>
 
 </body>
 
