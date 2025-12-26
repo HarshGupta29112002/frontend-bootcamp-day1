@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cnt{
+    margin: 50px 100px;
+    
+}
+fieldset{
+    width: 30%;
+}
+.main{
+    padding: 0px 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.uname,.mail,.pass,.cpass{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.btns{
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

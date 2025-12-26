@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+
+<body>
+    <div class="cnt">
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Login</legend>
+                <br>
+                <div class="main">
+                    <div class="user-name">
+                        <label for="uname">UserName: </label><br>
+                        <input type="text" id="loginUname" name="uname" required><br><br>
+                    </div>
+                    <br>
+                    <div class="user-pass">
+                        <label for="loginPassword">Password:</label><br>
+                        <input type="password" id="loginPassword" name="password" required><br><br>
+                    </div>
+                    <br>
+                    <div class="btns">
+                        <input type="submit" value="Login">
+                        <input type="submit" value="Register">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <script>
+       let loginUname = document.getElementById("loginUname");
+       let loginPassword = document.getElementById("loginPassword");
+       
+       loginPassword.addEventListener("click", function(){
+           if(loginUname.value === ""){
+               alert("Please enter your username first.");
+               loginUname.focus();
+           }
+       });
+    </script>
+</body>
+
+</html>
