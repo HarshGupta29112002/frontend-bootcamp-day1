@@ -15,19 +15,18 @@
             <div class="form-group">
                 <label for="username">Username</label><br>
                 <input type="text" id="username" name="username" placeholder="Enter Your Username" required><br>
-                <span id="unError" class="error-message"></span>
+                
             </div>
             <div class="form-group">
                 <label for="password">Password</label><br>
                 <input type="password" id="password" name="password" placeholder="Enter Your Password" required><br>
-                <span id="pwdError" class="error-message"></span>
             </div>
             <div class="button-group">
                 <button class="btn" type="submit">Login</button>
-
                 <a class="btn" href="./register.html">Register</a>
             </div>
             <p id="successMsg"></p>
+            <span id="unError" class="error-message"></span>
         </form>
     </div>
     <script>
@@ -37,32 +36,21 @@
         let pwd = document.getElementById("password")
 
         let unError = document.getElementById("unError")
-        let pwdError = document.getElementById("pwdError")
 
         let successMsg = document.getElementById("successMsg")
 
         const verify_id = localStorage.getItem("user");
         const user = JSON.parse(verify_id);
 
-        un.addEventListener("change", (e) => {
+        login.addEventListener("submit", (e) => {
             e.preventDefault();
             let unObj = {
-                userName: e.target.value
-            }
-            if (verify_id) {
-                let match = user.find((u) => u.userName === unObj.userName);
-                unError.textContent = match ? "" : "*Invalid username";
-            }
-        });
-
-        pwd.addEventListener("change", (e) => {
-            e.preventDefault();
-            let pwdObj = {
+                userName: e.target.value,
                 password: e.target.value
             }
             if (verify_id) {
-                let match = user.find((u) => u.password === pwdObj.password);
-                pwdError.textContent = match ? "" : "*Invalid password";
+                let match = user.find((u) => u.userName === unObj.userName && u.password === unObj.password);
+                unError.textContent = match ? "" : "*Invalid username or password";
             }
         });
 

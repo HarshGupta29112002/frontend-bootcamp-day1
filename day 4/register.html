@@ -48,10 +48,17 @@
             password: pwd.value
         }
         let userArray = JSON.parse(localStorage.getItem("user")) || []
-        userArray.push(userobj)
-        localStorage.setItem("user", JSON.stringify(userArray))
-        alert("Registered Successfully")
-        window.location.href = "./login.html";
+        if(userArray.find((u) => u.userName === userobj.userName)){
+            alert("Username already exists. Please choose a different username.");
+            un.value = "";
+            return;
+        }
+        else{
+            userArray.push(userobj)
+            localStorage.setItem("user", JSON.stringify(userArray))
+            alert("Registered Successfully")
+            window.location.href = "./login.html";
+        }
     })
   
     </script>
