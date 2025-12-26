@@ -9,38 +9,52 @@
 </head>
 
 <body>
-    <div class="cnt">
-
-        <form action="#" method="post">
-            <fieldset>
-                <legend>Register</legend>
-                <div class="main">
-
-                    <div class="uname">
-                        <label for="name">Full Name:</label><br>
-                        <input type="text" id="name" name="name" required><br><br>
-                    </div>
-                    <div class="mail">
-                        <label for="regEmail">Email:</label><br>
-                        <input type="email" id="regEmail" name="email" required><br><br>
-                    </div>
-                    <div class="pass">
-                        <label for="regPassword">Password:</label><br>
-                        <input type="password" id="regPassword" name="password" required><br><br>
-                    </div>
-                    <div class="cpass">
-                        <label for="confirmPassword">Confirm Password:</label><br>
-                        <input type="password" id="confirmPassword" name="confirm_password" required><br><br>
-                    </div>
-
-                </div>
-                <div class="btns">
-                    <input type="submit" value="Register">
-                    <p>already registered?<a href="./login.html">login here</a></p>
-                </div>
-            </fieldset>
+    <div class="register-container">
+        <h2>Create Account</h2>
+        <form action="" id="registration">
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter Your Full Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter Your email" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter Your User Name" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+            </div>
+            <button class="register-btn" type="submit">Register</button>
         </form>
+        <div class="bottom-text">
+            <p>Already have an Account &nbsp;</p>
+            <a href="./login.html"> Login here</a>
+        </div>
     </div>
+    <script>
+        
+    let registration = document.getElementById("registration")
+    let un  = document.getElementById("username")
+    let pwd = document.getElementById("password")
+
+    registration.addEventListener("submit", (e)=>{
+        e.preventDefault();
+        let userobj = {
+            userName : un.value,
+            password: pwd.value
+        }
+        let userArray = JSON.parse(localStorage.getItem("user")) || []
+        userArray.push(userobj)
+        localStorage.setItem("user", JSON.stringify(userArray))
+        alert("Registered Successfully")
+        window.location.href = "./login.html";
+    })
+  
+    </script>
 
 </body>
 
