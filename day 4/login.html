@@ -42,17 +42,17 @@
         const verify_id = localStorage.getItem("user");
         const user = JSON.parse(verify_id);
 
-        login.addEventListener("submit", (e) => {
-            e.preventDefault();
-            let unObj = {
-                userName: e.target.value,
-                password: e.target.value
-            }
-            if (verify_id) {
-                let match = user.find((u) => u.userName === unObj.userName && u.password === unObj.password);
-                unError.textContent = match ? "" : "*Invalid username or password";
-            }
-        });
+        // login.addEventListener("submit", (e) => {
+        //     e.preventDefault();
+        //     let unObj = {
+        //         userName: e.target.value,
+        //         password: e.target.value
+        //     }
+        //     if (verify_id) {
+        //         let match = user.find((u) => u.userName === unObj.userName && u.password === unObj.password);
+        //         unError.textContent = match ? "" : "*Invalid username or password";
+        //     }
+        // });
 
         login.addEventListener("submit", (e) => {
             e.preventDefault()
@@ -71,6 +71,9 @@
                     }, 1000);
                     un.value = "";
                     pwd.value = "";
+                }
+                else{
+                    successMsg.textContent = "Invalid credentials ❌";
                 }
             } else {
                 successMsg.textContent = "User not registered!";
