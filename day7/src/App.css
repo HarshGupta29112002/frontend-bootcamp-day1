@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #1e1e2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.TodoWrapper {
+  background: #25273c;
+  padding: 2rem;
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.TodoWrapper h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+/* FORM */
+.TodoForm {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.todo-btn {
+  background: #6c63ff;
+  color: white;
+  border: none;
+  padding: 0 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.todo-btn:hover {
+  background: #554ee8;
+}
+
+/* TODO ITEM */
+.Todo {
+  background: #2f3150;
+  color: white;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Todo p {
+  margin: 0;
+  cursor: pointer;
+}
+
+.Todo p.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* ICONS */
+.Todo svg {
+  margin-left: 10px;
+  cursor: pointer;
+  color: #bbb;
+}
+
+.Todo svg:hover {
+  color: #fff;
+}
